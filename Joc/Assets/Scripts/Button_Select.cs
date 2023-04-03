@@ -9,4 +9,10 @@ public class Button_Select : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Close");
+        Application.Quit();
+    }
 }
