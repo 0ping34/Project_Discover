@@ -353,6 +353,7 @@
 "Assets/Scripts/Interface_Scripts/Inventory.cs"
 "Assets/Scripts/Kyle_Scripts/Player_Controller.cs"
 "Assets/Scripts/LevelSelect.cs"
+"Assets/Scripts/Music.cs"
 "Assets/Scripts/Optiuni.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
