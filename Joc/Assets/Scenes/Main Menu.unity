@@ -5796,13 +5796,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1959759975}
-        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1959759967}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7402,7 +7402,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1658990342}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1959759967}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1658990342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8066,10 +8078,10 @@ GameObject:
   - component: {fileID: 1959759971}
   - component: {fileID: 1959759970}
   - component: {fileID: 1959759969}
-  - component: {fileID: 1959759972}
   - component: {fileID: 1959759974}
   - component: {fileID: 1959759973}
   - component: {fileID: 1959759975}
+  - component: {fileID: 1959759976}
   m_Layer: 5
   m_Name: Level Selector
   m_TagString: Untagged
@@ -8165,18 +8177,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1959759972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959759967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d0393f73324d444494e83155944f7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1959759973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8224,9 +8224,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959759967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aecd7f30b0e0c04cb651f965d585214, type: 3}
+  m_Script: {fileID: 11500000, guid: f9fa4fe4554d26842b867e4f1c61f8b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 1138697142}
+  sceneName: Level1
+--- !u!114 &1959759976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959759967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9fa4fe4554d26842b867e4f1c61f8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1658990341}
+  sceneName: Level2
 --- !u!1 &1968547025
 GameObject:
   m_ObjectHideFlags: 0

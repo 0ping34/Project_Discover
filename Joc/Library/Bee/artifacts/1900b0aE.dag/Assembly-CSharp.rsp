@@ -354,7 +354,7 @@
 "Assets/Scripts/Interface_Scripts/Button_Select.cs"
 "Assets/Scripts/Interface_Scripts/Inventory.cs"
 "Assets/Scripts/Kyle_Scripts/Player_Controller.cs"
-"Assets/Scripts/LevelSelect.cs"
+"Assets/Scripts/LoadSceneButton.cs"
 "Assets/Scripts/Music.cs"
 "Assets/Scripts/Optiuni.cs"
 "Assets/Scripts/Pick_Up.cs"
