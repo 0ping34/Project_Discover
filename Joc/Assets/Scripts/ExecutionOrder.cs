@@ -35,6 +35,9 @@ public class ExecutionOrder : MonoBehaviour
                 case "AddCube":
                     controller.AddBlock();
                     break;
+                case "RotateAround":
+                    controller.Rotate180();
+                    break;    
                 case "def":
                     controller.resetPosition(); 
                     break;

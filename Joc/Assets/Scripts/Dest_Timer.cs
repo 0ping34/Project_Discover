@@ -6,7 +6,7 @@ public class Dest_Timer : MonoBehaviour
 {
     IEnumerator dest()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         Destroy(gameObject);
     }
     // Start is called before the first frame updat

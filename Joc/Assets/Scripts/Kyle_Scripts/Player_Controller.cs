@@ -47,11 +47,19 @@ public class Player_Controller : MonoBehaviour
             StartCoroutine(RotateMe(Vector3.up * -90, 1.0f));
 
     }
+    public void Rotate180()
+    {
+        if (!playerAnimator.GetBool("Move"))
+            StartCoroutine(RotateMe(Vector3.up * 180, 1.2f));
+    }
     public void moveUp()
     {
         if (!playerAnimator.GetBool("Move"))
+        {
+            transform.position = new Vector3(transform.position.x, 0.0f, transform.position.z);
             moveForward();
-
+            transform.position = new Vector3(transform.position.x, 0.0f, transform.position.z);
+        }
     }
     void moveForward()
     {
@@ -75,7 +83,7 @@ public class Player_Controller : MonoBehaviour
     }*/
     public void AddBlock()
     {
-        Vector3 placePos = new Vector3(other.transform.position.x, -0.689f, other.transform.position.z);
+        Vector3 placePos = new Vector3(other.transform.position.x, -0.669f, other.transform.position.z);
         Instantiate(placeCube, placePos, Quaternion.identity);
 
     }
@@ -96,7 +104,7 @@ public class Player_Controller : MonoBehaviour
             else if (hit.collider.gameObject.tag == "Falling")
             {
                 Debug.Log("We've hit the falling cube!");
-                
+                cubeFall = hit.collider.gameObject;
                 executionOrder.StopExec();
                 cubeFall.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 cubeFall.gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -114,6 +122,7 @@ public class Player_Controller : MonoBehaviour
                 Debug.Log("We've hit a checkpoint!");
                 firstpos = transform.position;
                 firstrot = transform.rotation;
+                hit.collider.gameObject.tag = "Untagged";
               //  executionOrder.StopExec();
               //  actionArray.ClearAll();
             }
@@ -179,7 +188,7 @@ public class Player_Controller : MonoBehaviour
         actionArray = GameObject.Find("Action Array").GetComponent<ActionArray>();
         executionOrder = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<ExecutionOrder>();
         winPopup = GameObject.FindGameObjectWithTag("Finish_Popup").GetComponent<RectTransform>();
-        cubeFall = GameObject.FindGameObjectWithTag("Falling");
+       // cubeFall = GameObject.FindGameObjectWithTag("Falling");
     }
     // Start is called before the first frame update
     void Start()
