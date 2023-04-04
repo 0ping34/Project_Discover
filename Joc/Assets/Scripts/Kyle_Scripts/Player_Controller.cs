@@ -6,7 +6,7 @@ public class Player_Controller : MonoBehaviour
 {
     private ActionArray actionArray;
     private ExecutionOrder executionOrder;
-
+    
     Animator playerAnimator;
     private bool check;
     public float walktime = 2.0f;
@@ -70,6 +70,7 @@ public class Player_Controller : MonoBehaviour
                 Debug.Log("Ai castigat nivelul!");
                 executionOrder.StopExec();
                 winPopup.localScale = Vector3.one;
+                
             }
         }
         else
