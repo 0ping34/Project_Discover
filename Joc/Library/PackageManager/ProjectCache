@@ -16,6 +16,7 @@ m_ProjectFiles:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       ticks: 638161458702643204
     m_Hash: 2408981072
 =======
@@ -28,6 +29,10 @@ m_ProjectFiles:
 >>>>>>> Stashed changes
 =======
       ticks: 638162081846487961
+    m_Hash: 1755400957
+>>>>>>> Stashed changes
+=======
+      ticks: 638162357329912452
     m_Hash: 1755400957
 >>>>>>> Stashed changes
 m_EmbeddedPackageManifests:
