@@ -560,7 +560,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 121216727878719425}
+      - m_Target: {fileID: 611841276}
         m_TargetAssemblyTypeName: PrevScene, Assembly-CSharp
         m_MethodName: GoPrevScene
         m_Mode: 1
@@ -932,6 +932,7 @@ GameObject:
   - component: {fileID: 611841272}
   - component: {fileID: 611841274}
   - component: {fileID: 611841273}
+  - component: {fileID: 611841276}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMaster
@@ -1006,6 +1007,18 @@ RectTransform:
   m_AnchoredPosition: {x: 975, y: 642}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &611841276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611841271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c95f56cdf571114887744428d6e08f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &703614482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,6 +2463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -6737,7 +6751,6 @@ GameObject:
   - component: {fileID: 121216727878719418}
   - component: {fileID: 121216727878719419}
   - component: {fileID: 121216727878719424}
-  - component: {fileID: 121216727878719425}
   m_Layer: 5
   m_Name: Action Array
   m_TagString: Untagged
@@ -6772,18 +6785,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &121216727878719425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121216727878719423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c95f56cdf571114887744428d6e08f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &121216728024008274
 MonoBehaviour:
   m_ObjectHideFlags: 0

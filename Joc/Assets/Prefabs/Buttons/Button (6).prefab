@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb9844caea89fb4fb08d6f0283de98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
 --- !u!114 &5448967787922201716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c220bb24974cccf4d9e176f204c2e68f, type: 3}
+  m_Texture: {fileID: 2800000, guid: 8c835ee80a5dbb1408dd20233e988b78, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
