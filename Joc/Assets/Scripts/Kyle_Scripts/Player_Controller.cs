@@ -13,8 +13,10 @@ public class Player_Controller : MonoBehaviour
 
     private GameObject thisObject;
     private GameObject other;
+    private RectTransform winPopup;
     private Vector3 firstpos;
     private Quaternion firstrot;
+
 
     Vector3 forward;
     Vector3 toOther;
@@ -67,6 +69,7 @@ public class Player_Controller : MonoBehaviour
             {
                 Debug.Log("Ai castigat nivelul!");
                 executionOrder.StopExec();
+                winPopup.localScale = Vector3.one;
             }
         }
         else
@@ -111,6 +114,7 @@ public class Player_Controller : MonoBehaviour
         playerAnimator = thisObject.GetComponent<Animator>();
         actionArray = GameObject.Find("Action Array").GetComponent<ActionArray>();
         executionOrder = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<ExecutionOrder>();
+        winPopup = GameObject.FindGameObjectWithTag("Finish_Popup").GetComponent<RectTransform>();
        
        
     }
