@@ -19,7 +19,11 @@ MonoBehaviour:
     width: 1206
     height: 715
   m_ShowMode: 4
+<<<<<<< Updated upstream
   m_Title: Project
+=======
+  m_Title: Game
+>>>>>>> Stashed changes
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -49,9 +53,13 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 12117}
   vertical: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 39
 =======
   controlID: 110
+>>>>>>> Stashed changes
+=======
+  controlID: 117
 >>>>>>> Stashed changes
 --- !u!114 &3
 MonoBehaviour:
@@ -70,11 +78,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 921
     y: 0
+<<<<<<< Updated upstream
     width: 285
     height: 665
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
+=======
+    width: 455
+    height: 947
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+>>>>>>> Stashed changes
   m_Panes:
   - {fileID: 13}
   m_Selected: 0
@@ -228,9 +244,13 @@ MonoBehaviour:
   m_MaxSize: {x: 8096, y: 12117}
   vertical: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 40
 =======
   controlID: 16
+>>>>>>> Stashed changes
+=======
+  controlID: 21
 >>>>>>> Stashed changes
 --- !u!114 &10
 MonoBehaviour:
@@ -257,9 +277,13 @@ MonoBehaviour:
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 41
 =======
   controlID: 17
+>>>>>>> Stashed changes
+=======
+  controlID: 22
 >>>>>>> Stashed changes
 --- !u!114 &11
 MonoBehaviour:
@@ -330,18 +354,27 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< Updated upstream
     - Assets/Scenes
+=======
+    - Assets/UI
+>>>>>>> Stashed changes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< Updated upstream
   - Assets/Scenes
+=======
+  - Assets/UI
+>>>>>>> Stashed changes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\valio\Documents\GitHub\Project_Discover\Joc
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 9e590000
@@ -352,6 +385,12 @@ MonoBehaviour:
     m_SelectedIDs: 125b0000
     m_LastClickedID: 23314
     m_ExpandedIDs: 00000000fa5a0000fc5a0000fe5a0000005b000000ca9a3b
+>>>>>>> Stashed changes
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 005b0000
+    m_LastClickedID: 23296
+    m_ExpandedIDs: 00000000025b000000ca9a3b
 >>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -381,9 +420,13 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_ExpandedIDs: 000000009c5900009e590000
 =======
     m_ExpandedIDs: 00000000fa5a0000fc5a0000fe5a0000005b0000
+>>>>>>> Stashed changes
+=======
+    m_ExpandedIDs: 00000000005b0000025b0000045b0000065b0000
 >>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -515,9 +558,13 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_SelectedIDs: 
 =======
       m_SelectedIDs: 805b0000
+>>>>>>> Stashed changes
+=======
+      m_SelectedIDs: 
 >>>>>>> Stashed changes
       m_LastClickedID: 0
       m_ExpandedIDs: 38fbffff
@@ -803,9 +850,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: 491.1431, y: 280.712, z: -2.4025016}
+    speed: 2
+    m_Value: {x: 493.1483, y: 276.32224, z: -2.5417793}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -856,9 +909,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
+<<<<<<< Updated upstream
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+    m_Target: 295.5834
+    speed: 2
+    m_Value: 309.5114
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
     speed: 2
