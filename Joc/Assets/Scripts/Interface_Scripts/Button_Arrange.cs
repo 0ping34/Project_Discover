@@ -8,7 +8,7 @@ public class Button_Arrange : MonoBehaviour
     // private GameObject obj;
     // Start is called before the first frame update
     private bool isClicked = false;
-    public GameObject panel;
+    private GameObject panel;
     private RectTransform selfRectTransform;
     private RectTransform rectTransform;
     private ActionArray actionArray;
@@ -16,9 +16,11 @@ public class Button_Arrange : MonoBehaviour
 
     private void Awake()
     {
-        canvas = GetComponentInParent<Canvas>();
+        panel = GameObject.Find("Action Array");
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         rectTransform = panel.GetComponent<RectTransform>();
         selfRectTransform = gameObject.GetComponent<RectTransform>();
+        
 
     }
     void Start()
@@ -36,6 +38,7 @@ public class Button_Arrange : MonoBehaviour
         {
             isClicked = true;
             actionArray.focusedObject = gameObject;
+            Debug.Log(gameObject.name);
             gameObject.transform.SetParent(canvas.transform);
         }
         else

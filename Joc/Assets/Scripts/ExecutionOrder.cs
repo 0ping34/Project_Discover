@@ -32,6 +32,12 @@ public class ExecutionOrder : MonoBehaviour
                 case "RotateLeft":
                     controller.Rotate90L();
                     break;
+                case "AddCube":
+                    controller.AddBlock();
+                    break;
+                case "def":
+                    controller.resetPosition(); 
+                    break;
 
             }
             yield return new WaitForSeconds(2);
@@ -53,6 +59,7 @@ public class ExecutionOrder : MonoBehaviour
             }
             else break;
         }
+        list.Add("def");
 
     }
     public void Play()

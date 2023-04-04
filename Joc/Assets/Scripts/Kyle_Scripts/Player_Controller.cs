@@ -6,14 +6,18 @@ public class Player_Controller : MonoBehaviour
 {
     private ActionArray actionArray;
     private ExecutionOrder executionOrder;
-    
+    private Pick_Up pickup;
+
     Animator playerAnimator;
+    GameObject cubeFall;
     private bool check;
     public float walktime = 2.0f;
+    public GameObject placeCube;
 
     private GameObject thisObject;
     private GameObject other;
     private RectTransform winPopup;
+
     private Vector3 firstpos;
     private Quaternion firstrot;
 
@@ -29,13 +33,13 @@ public class Player_Controller : MonoBehaviour
         for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
         {
             thisObject.transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
-            yield return null;        }
+            yield return null; }
     }
     public void Rotate90R()
     {
-        if (!playerAnimator.GetBool("Move")) 
+        if (!playerAnimator.GetBool("Move"))
             StartCoroutine(RotateMe(Vector3.up * 90, 1.0f));
-      
+
     }
     public void Rotate90L()
     {
@@ -47,15 +51,33 @@ public class Player_Controller : MonoBehaviour
     {
         if (!playerAnimator.GetBool("Move"))
             moveForward();
-          
-     }
+
+    }
     void moveForward()
     {
         forwardpos = other.transform.position;
+       
 
         playerAnimator.SetBool("Move", true);
 
-        
+
+    }
+
+   /* IEnumerator MoveObject(Vector3 startingPos, Vector3 endingPos, float timeToMove)
+    {
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / timeToMove;
+            transform.position = Vector3.Slerp(startingPos, endingPos, t);
+            yield return null;
+        }
+    }*/
+    public void AddBlock()
+    {
+        Vector3 placePos = new Vector3(other.transform.position.x, -0.689f, other.transform.position.z);
+        Instantiate(placeCube, placePos, Quaternion.identity);
+
     }
 
     void CheckGround()
@@ -70,8 +92,32 @@ public class Player_Controller : MonoBehaviour
                 Debug.Log("Ai castigat nivelul!");
                 executionOrder.StopExec();
                 winPopup.localScale = Vector3.one;
-                
             }
+            else if (hit.collider.gameObject.tag == "Falling")
+            {
+                Debug.Log("We've hit the falling cube!");
+                
+                executionOrder.StopExec();
+                cubeFall.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                cubeFall.gameObject.GetComponent<BoxCollider>().enabled = false;
+                StartCoroutine("DelayedReset");
+            }
+            else if (hit.collider.gameObject.tag == "Pick_Up")
+            {
+                Debug.Log("We've hit a Pick_up");
+                pickup = hit.collider.gameObject.GetComponent<Pick_Up>();
+                pickup.AddButtons();
+
+            }
+            else if (hit.collider.gameObject.tag == "Checkpoint")
+            {
+                Debug.Log("We've hit a checkpoint!");
+                firstpos = transform.position;
+                firstrot = transform.rotation;
+              //  executionOrder.StopExec();
+              //  actionArray.ClearAll();
+            }
+
         }
         else
         {
@@ -81,7 +127,23 @@ public class Player_Controller : MonoBehaviour
             transform.position = firstpos;
             transform.rotation = firstrot;
         }
+       
         
+    }
+    public void resetPosition()
+    {
+        transform.position = firstpos;
+        transform.rotation = firstrot;
+    }
+    IEnumerator DelayedReset()
+    {
+        yield return new WaitForSeconds(2);
+        cubeFall.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        cubeFall.gameObject.GetComponent<BoxCollider>().enabled = true;
+        transform.position = firstpos;
+        transform.rotation = firstrot;
+        actionArray.ClearAll();
+       
     }
 
      void checkDistance()
@@ -100,6 +162,7 @@ public class Player_Controller : MonoBehaviour
 
             forwardpos = other.transform.position;
 
+
             CheckGround();
             
         }
@@ -116,14 +179,14 @@ public class Player_Controller : MonoBehaviour
         actionArray = GameObject.Find("Action Array").GetComponent<ActionArray>();
         executionOrder = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<ExecutionOrder>();
         winPopup = GameObject.FindGameObjectWithTag("Finish_Popup").GetComponent<RectTransform>();
-       
-       
+        cubeFall = GameObject.FindGameObjectWithTag("Falling");
     }
     // Start is called before the first frame update
     void Start()
     {
         firstpos = transform.position;
         firstrot = transform.rotation;
+
         // moveUp();
         // Rotate90();
     }
@@ -131,9 +194,10 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (check == true && Input.GetKey("w")) moveForward();
+        //if (check == true && Input.GetKey("w")) moveForward();
        // Debug.Log(check);
         checkDistance();
+        if (Input.GetKeyUp("a")) AddBlock();
        // CheckGround();
        
 
