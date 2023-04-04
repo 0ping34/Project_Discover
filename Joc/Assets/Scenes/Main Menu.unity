@@ -3380,9 +3380,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698867809}
-        m_TargetAssemblyTypeName: Optiuni, Assembly-CSharp
-        m_MethodName: SetResolution
+      - m_Target: {fileID: 698867810}
+        m_TargetAssemblyTypeName: Graphic, Assembly-CSharp
+        m_MethodName: SetQualityLevel
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3858,6 +3858,7 @@ GameObject:
   - component: {fileID: 698867806}
   - component: {fileID: 698867805}
   - component: {fileID: 698867809}
+  - component: {fileID: 698867810}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3966,6 +3967,19 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 1287108895}
   fullscreenToggle: {fileID: 341724323}
   volumeSlider: {fileID: 1158464419}
+--- !u!114 &698867810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698867804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ddeee1d4b4c5941a7654d16dbf4ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphicsDropdown: {fileID: 641916289}
 --- !u!1 &716215983
 GameObject:
   m_ObjectHideFlags: 0
