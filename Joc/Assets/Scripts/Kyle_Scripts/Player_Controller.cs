@@ -38,11 +38,17 @@ public class Player_Controller : MonoBehaviour
             thisObject.transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
             yield return null;        }
     }
-    public void Rotate90()
+    public void Rotate90R()
     {
         if (!playerAnimator.GetBool("Move")) 
-            StartCoroutine(RotateMe(Vector3.up * 90, 2.0f));
+            StartCoroutine(RotateMe(Vector3.up * 90, 1.0f));
       
+    }
+    public void Rotate90L()
+    {
+        if (!playerAnimator.GetBool("Move"))
+            StartCoroutine(RotateMe(Vector3.up * -90, 1.0f));
+
     }
     public void moveUp()
     {
