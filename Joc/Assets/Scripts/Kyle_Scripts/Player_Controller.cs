@@ -4,31 +4,22 @@ using UnityEngine;
 
 public class Player_Controller : MonoBehaviour
 {
+    private ActionArray actionArray;
+    private ExecutionOrder executionOrder;
+
     Animator playerAnimator;
     private bool check;
     public float walktime = 2.0f;
 
     private GameObject thisObject;
     private GameObject other;
+    private Vector3 firstpos;
+    private Quaternion firstrot;
 
     Vector3 forward;
     Vector3 toOther;
     Vector3 forwardpos;
-    /* IEnumerator movePlayer()
-    {
-        /check = false;
-       // float gridstep = 1.12007f;
 
-        forwardpos = other.transform.position;
-
-        playerAnimator.SetBool("Move", true);
-        yield return new WaitForSeconds(walktime);
-        //playerAnimator.SetBool("Move", false);
-        
-        forwardpos = other.transform.position;
-        check = true;
-
-    }*/
     IEnumerator RotateMe(Vector3 byAngles, float inTime)
     {
         var fromAngle = thisObject.transform.rotation;
@@ -61,8 +52,33 @@ public class Player_Controller : MonoBehaviour
         forwardpos = other.transform.position;
 
         playerAnimator.SetBool("Move", true);
+
+        
     }
 
+    void CheckGround()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 250.0f, ~2))
+        {
+            Debug.DrawRay(transform.position, Vector3.down, Color.blue, 600);
+            if (hit.collider.gameObject.tag == "Finish")
+            {
+                Debug.Log("Ai castigat nivelul!");
+                executionOrder.StopExec();
+            }
+        }
+        else
+        {
+            Debug.Log("You are not walking on ground!");
+            actionArray.ClearAll();
+            executionOrder.StopExec();
+            transform.position = firstpos;
+            transform.rotation = firstrot;
+        }
+        
+    }
 
      void checkDistance()
     {
@@ -80,6 +96,8 @@ public class Player_Controller : MonoBehaviour
 
             forwardpos = other.transform.position;
 
+            CheckGround();
+            
         }
     }
 
@@ -91,13 +109,18 @@ public class Player_Controller : MonoBehaviour
         thisObject = GameObject.FindGameObjectWithTag("Player");
         other = GameObject.Find("Forward");
         playerAnimator = thisObject.GetComponent<Animator>();
+        actionArray = GameObject.Find("Action Array").GetComponent<ActionArray>();
+        executionOrder = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<ExecutionOrder>();
+       
        
     }
     // Start is called before the first frame update
     void Start()
     {
-       // moveUp();
-       // Rotate90();
+        firstpos = transform.position;
+        firstrot = transform.rotation;
+        // moveUp();
+        // Rotate90();
     }
 
     // Update is called once per frame
@@ -106,6 +129,7 @@ public class Player_Controller : MonoBehaviour
         if (check == true && Input.GetKey("w")) moveForward();
        // Debug.Log(check);
         checkDistance();
+       // CheckGround();
        
 
     }

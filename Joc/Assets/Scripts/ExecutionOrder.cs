@@ -63,6 +63,10 @@ public class ExecutionOrder : MonoBehaviour
     {
         actionArray.ClearAll();
     }
+    public void StopExec()
+    {
+        StopCoroutine("executeAction");
+    }
 
     // Update is called once per frame
     void Update()
