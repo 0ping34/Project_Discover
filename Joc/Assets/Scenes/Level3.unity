@@ -2164,7 +2164,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9f534eb919e9aa848acad0cc5e7ba302, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 543eb07df9bc0bf4eb7af8ea569233e1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3375,7 +3375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3802,6 +3801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d56cddf057f7504396625df731282e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  makeCheckpointRev: 0
   walktime: 2
   placeCube: {fileID: 1273353957607070399, guid: a4bf1fcadef08784cb6561ee3614fdec, type: 3}
 --- !u!1001 &1314125006
@@ -6500,7 +6500,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b74162e2c248fcb42b31a23f0022c568, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 866bb3bff8024ec4895f9c2b0659f349, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
