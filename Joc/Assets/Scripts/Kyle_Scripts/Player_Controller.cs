@@ -85,8 +85,11 @@ public class Player_Controller : MonoBehaviour
     }*/
     public void AddBlock()
     {
+        playerAnimator.SetTrigger("Place");
+        gameObject.GetComponent<AudioSource>().Play();
         Vector3 placePos = new Vector3(other.transform.position.x, -0.669f, other.transform.position.z);
         Instantiate(placeCube, placePos, Quaternion.identity);
+      
 
     }
 
@@ -230,7 +233,7 @@ public class Player_Controller : MonoBehaviour
         actionArray = GameObject.Find("Action Array").GetComponent<ActionArray>();
         executionOrder = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<ExecutionOrder>();
         winPopup = GameObject.FindGameObjectWithTag("Finish_Popup").GetComponent<RectTransform>();
-        revCheck = GameObject.Find("Rev").GetComponent<RevCheck>();
+       if(makeCheckpointRev) revCheck = GameObject.Find("Rev").GetComponent<RevCheck>();
        // cubeFall = GameObject.FindGameObjectWithTag("Falling");
     }
     // Start is called before the first frame update
