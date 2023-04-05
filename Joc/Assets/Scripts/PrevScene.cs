@@ -5,16 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PrevScene : MonoBehaviour
 {
-    public void GoPrevScene()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex - 1);
-    }
-
     public void GoHome()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(0);
     }
 }
-

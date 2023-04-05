@@ -562,7 +562,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 611841276}
         m_TargetAssemblyTypeName: PrevScene, Assembly-CSharp
-        m_MethodName: GoPrevScene
+        m_MethodName: GoHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
