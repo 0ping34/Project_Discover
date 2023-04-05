@@ -7,10 +7,12 @@ public class Player_Controller : MonoBehaviour
     private ActionArray actionArray;
     private ExecutionOrder executionOrder;
     private Pick_Up pickup;
-
+    private RevCheck revCheck;
+        
     Animator playerAnimator;
     GameObject cubeFall;
     private bool check;
+    public bool makeCheckpointRev = false;
     public float walktime = 2.0f;
     public GameObject placeCube;
 
@@ -95,7 +97,46 @@ public class Player_Controller : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 250.0f, ~2))
         {
             Debug.DrawRay(transform.position, Vector3.down, Color.blue, 600);
-            if (hit.collider.gameObject.tag == "Finish")
+            switch (hit.collider.gameObject.tag)
+            {
+                case "Finish":
+                    Debug.Log("Ai castigat nivelul!");
+                    executionOrder.StopExec();
+                    winPopup.localScale = Vector3.one;
+                    break;
+                case "Falling":
+                    Debug.Log("We've hit the falling cube!");
+                    cubeFall = hit.collider.gameObject;
+                    executionOrder.StopExec();
+                    cubeFall.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    cubeFall.gameObject.GetComponent<BoxCollider>().enabled = false;
+                    StartCoroutine("DelayedReset");
+                    break;
+                case "Pick_Up":
+                    Debug.Log("We've hit a Pick_up");
+                    pickup = hit.collider.gameObject.GetComponent<Pick_Up>();
+                    pickup.AddButtons();
+                    break;
+                case "Checkpoint":
+                    Debug.Log("We've hit a checkpoint!");
+                    firstpos = transform.position;
+                    firstrot = transform.rotation;
+                    hit.collider.gameObject.tag = "Untagged";
+                    if (makeCheckpointRev) hit.collider.gameObject.tag = "Revolution";
+                    //  executionOrder.StopExec();
+                    //  actionArray.ClearAll();
+                    break;
+                case "Revolution":
+                    Debug.Log("Sitting on Revolution square!");
+                    if (executionOrder.CheckRev()) {
+                        Debug.Log("We have completed one revolution");
+                        revCheck.currentRev= revCheck.currentRev+1;
+                        revCheck.updateSensor();
+                            }
+                    break;
+            }
+
+            /*if (hit.collider.gameObject.tag == "Finish")
             {
                 Debug.Log("Ai castigat nivelul!");
                 executionOrder.StopExec();
@@ -123,9 +164,10 @@ public class Player_Controller : MonoBehaviour
                 firstpos = transform.position;
                 firstrot = transform.rotation;
                 hit.collider.gameObject.tag = "Untagged";
+                if (makeCheckpointRev) hit.collider.gameObject.tag = "Revolution";
               //  executionOrder.StopExec();
               //  actionArray.ClearAll();
-            }
+            }*/
 
         }
         else
@@ -188,6 +230,7 @@ public class Player_Controller : MonoBehaviour
         actionArray = GameObject.Find("Action Array").GetComponent<ActionArray>();
         executionOrder = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<ExecutionOrder>();
         winPopup = GameObject.FindGameObjectWithTag("Finish_Popup").GetComponent<RectTransform>();
+        revCheck = GameObject.Find("Rev").GetComponent<RevCheck>();
        // cubeFall = GameObject.FindGameObjectWithTag("Falling");
     }
     // Start is called before the first frame update

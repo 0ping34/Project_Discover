@@ -9,6 +9,11 @@ TagManager:
   - RotateLeft
   - RotateRight
   - Finish_Popup
+  - Checkpoint
+  - Falling
+  - AddCube
+  - Pick_Up
+  - Revolution
   layers:
   - Default
   - TransparentFX

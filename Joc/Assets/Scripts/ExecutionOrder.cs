@@ -13,6 +13,7 @@ public class ExecutionOrder : MonoBehaviour
     {
         actionArray = GameObject.Find("Action Array").GetComponent<ActionArray>();
         controller = GameObject.FindWithTag("Player").GetComponent<Player_Controller>();
+        
     }
     void Start()
     {
@@ -47,6 +48,26 @@ public class ExecutionOrder : MonoBehaviour
             Debug.Log("Run executed.");
         }
         yield return null;
+    }
+    public bool CheckRev()
+    {
+        int i = 0;
+        bool isRevolution = true;
+        string[] actions = { 
+            "RotateLeft", "Move", "RotateRight",
+            "Move", "Move", "RotateRight",
+            "Move", "Move", "RotateRight",
+            "Move", "Move", "RotateRight",
+            "Move", "def" 
+        };
+        foreach (string item in list) {
+            if (item != actions[i]) {
+                isRevolution = false;
+                break;
+            }
+            i++;
+        }
+        return isRevolution;
     }
     void readOrder()
     {
